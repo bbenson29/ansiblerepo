@@ -2,5 +2,7 @@
 - hosts: all
   tasks:
   - name: Install only security updates
+    ansible_user: '{{ ansible_username }}'
+    ansible_password: '{{ ansible_password }}'
     win_updates:
       category_names: SecurityUpdates
